@@ -1,16 +1,20 @@
 #include "stdlib.h"
 #include <stdio.h>
 
-void swap(int* nums,int i,int j)
-{
-		int tmp = nums[i];
-		nums[i] = nums[j];
-		nums[j] = tmp;
-		return;
-}
-
 void InsertSort(int* nums,int len)
 {
-		
+		int i,j;
+		for (i = 2;i < len;i++)
+		{
+				if (nums[i] < nums[i-1])
+				{
+						nums[0] = nums[i];
+						for (j = i - 1;nums[j] > nums[0];j--)
+						{
+								nums[j+1] = nums[j];
+						}
+						nums[j+1] = nums[0];
+				}
+		}
 }
 
